@@ -214,11 +214,11 @@ if __name__ == "__main__":
     # Structure settings
     dim = 8                                     # 8, 256
     embedding_type = 'Angle'                    # Angle, Amplitude
-    model = 'RX_Half'                         # QCNN_Half, QCNN_Full, RX_Half, RX_Full, UGate_Half, UGate_Full
+    model = 'QCNN_Half'                         # QCNN_Half, QCNN_Full, RX_Half, RX_Full, UGate_Half, UGate_Full
     U_structure = 'U_1'                         # U_1, U_2, U_3, None (15, 4, 6, 0)
     V_structure = 'ZX'                          # Generalized, ZX, None (6, 2, 0)
     layers = 3                                  # 1, 2, 3
-    N_params = [8*1, 7*8*1, 8*1]     # QCNN_Half->[15*1*layers, 2*1*layers, 0], RX_Half->[8*1, 7*8*1, 8*1], UGate_Half->[4*28*2*1, 0, 0]
+    N_params = [15*1*layers, 2*1*layers, 0]     # QCNN_Half->[15*1*layers, 2*1*layers, 0], RX_Half->[8*1, 7*8*1, 8*1], UGate_Half->[4*28*2*1, 0, 0]
     Qubit_Num = 8                               # 8, 16
 
 

@@ -289,19 +289,18 @@ for i in "0123456789":
     mnist_test[i] = testSet_list[OutB]
 
 out_dim_list = [8,16]               # Compressed size
-input_s_list = ["01","018","0123"]  # Mnist Number
+input_s_list = ["01"]               # Mnist Number
 for out_dim in out_dim_list:
-
     loss_function_BCE = nn.BCELoss().to(device)
     loss_function_MSE = nn.MSELoss().to(device)
 
     for input_s in input_s_list:
         print(f"Compressed size = {out_dim}, Mnist Number = {input_s}, Train Num = {[len(mnist_train[i]) for i in input_s]}, Test Num = {[len(mnist_test[i]) for i in input_s]}")
 
-        file_train = f"Data\\Dim{out_dim}_mnist\\Mnist_train_{input_s}_t.json"
-        file_test = f"Data\\Dim{out_dim}_mnist\\Mnist_test_{input_s}_t.json"
-        AE_PATH = f"Data\\Dim{out_dim}_mnist\\AE_CNN_{input_s}_t.pth"
-        umap_save = f"Data\\Dim{out_dim}_mnist\\{input_s}_t.png"
+        file_train = f"Data\\Dim{out_dim}_mnist\\mnist_train_{input_s}.json"
+        file_test = f"Data\\Dim{out_dim}_mnist\\mnist_test_{input_s}.json"
+        AE_PATH = f"Data\\Dim{out_dim}_mnist\\AE_CNN_{input_s}.pth"
+        umap_save = f"Data\\Dim{out_dim}_mnist\\{input_s}.png"
         AE = AutoEncoder(out_dim)
         AE = AE.to(device)
 
